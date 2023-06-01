@@ -1,8 +1,8 @@
-import 'package:_food_delivery_ui_practice/models/food.dart';
-import 'package:_food_delivery_ui_practice/models/restaurant.dart';
+import 'package:moreno/modelos/producto.dart';
+import 'package:moreno/modelos/veterinaria.dart';
 
 class Order {
-  final Restaurant restaurant;
+  final Veterinaria restaurant;
   final Food food;
   final String date;
   final int quantity;

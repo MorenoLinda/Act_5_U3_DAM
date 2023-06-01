@@ -1,18 +1,18 @@
-import 'package:_food_delivery_ui_practice/models/food.dart';
-import 'package:_food_delivery_ui_practice/models/restaurant.dart';
+import 'package:moreno/modelos/producto.dart';
+import 'package:moreno/modelos/veterinaria.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-class RestaurantScreen extends StatefulWidget {
-  final Restaurant restaurant;
+class VeterinariaPantalla extends StatefulWidget {
+  final Veterinaria restaurant;
 
-  RestaurantScreen({required this.restaurant});
+  VeterinariaPantalla({required this.restaurant});
 
   @override
-  State<RestaurantScreen> createState() => _RestaurantScreenState();
+  State<VeterinariaPantalla> createState() => _VeterinariaPantallaState();
 }
 
-class _RestaurantScreenState extends State<RestaurantScreen> {
+class _VeterinariaPantallaState extends State<VeterinariaPantalla> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,11 +21,11 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
         Stack(
           children: [
             Hero(
-              tag: widget.restaurant.imageUrl,
+              tag: widget.restaurant.imagenUrl,
               child: Image(
                 height: 220,
                 width: MediaQuery.of(context).size.width,
-                image: AssetImage(widget.restaurant.imageUrl),
+                image: AssetImage(widget.restaurant.imagenUrl),
                 fit: BoxFit.cover,
               ),
             ),
@@ -44,7 +44,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                     onPressed: () {},
                     icon: Icon(Icons.favorite),
                     iconSize: 35,
-                    color: Colors.deepOrangeAccent,
+                    color: Colors.red,
                   )
                 ],
               ),
@@ -60,11 +60,11 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    widget.restaurant.name,
+                    widget.restaurant.nombre,
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
                   ),
                   Text(
-                    "0.2 miles away",
+                    "A unos 1.2 km de ti",
                     style: TextStyle(fontSize: 16),
                   )
                 ],
@@ -85,7 +85,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                   }),
               SizedBox(height: 10),
               Text(
-                widget.restaurant.address,
+                widget.restaurant.direccion,
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
               ),
             ],
@@ -100,7 +100,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                   splashColor: Colors.grey,
                   elevation: 4,
                   hoverElevation: 10,
-                  color: Colors.deepOrangeAccent,
+                  color: Colors.purple,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12)),
                   onPressed: () {},
@@ -112,7 +112,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                   splashColor: Colors.grey,
                   elevation: 4,
                   hoverElevation: 10,
-                  color: Colors.deepOrangeAccent,
+                  color: Colors.purple,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12)),
                   onPressed: () {},
@@ -155,7 +155,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
                 image: DecorationImage(
-                    image: AssetImage(menuItems.imageUrl), fit: BoxFit.cover)),
+                    image: AssetImage(menuItems.imagen), fit: BoxFit.cover)),
           ),
           Container(
             margin: EdgeInsets.all(10),
@@ -185,7 +185,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                     fontWeight: FontWeight.w600),
               ),
               Text(
-                "\$${menuItems.price}",
+                "\$${menuItems.precio}",
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 18,
@@ -199,7 +199,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
               child: Container(
                 // width: 48,
                 decoration: BoxDecoration(
-                    color: Colors.deepOrangeAccent,
+                    color: Colors.purple,
                     borderRadius: BorderRadius.circular(30)),
                 child: IconButton(
                     onPressed: () {},

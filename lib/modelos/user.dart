@@ -1,4 +1,4 @@
-import 'package:_food_delivery_ui_practice/models/order.dart';
+import 'package:moreno/modelos/orden.dart';
 
 class User {
   final String name;

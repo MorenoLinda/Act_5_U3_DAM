@@ -1,9 +1,9 @@
-import 'package:_food_delivery_ui_practice/data/data.dart';
-import 'package:_food_delivery_ui_practice/models/order.dart';
+import 'package:moreno/datos/data.dart';
+import 'package:moreno/modelos/orden.dart';
 import 'package:flutter/material.dart';
 
-class RecentOrders extends StatelessWidget {
-  const RecentOrders({Key? key}) : super(key: key);
+class OrdenReciente extends StatelessWidget {
+  const OrdenReciente({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class RecentOrders extends StatelessWidget {
         const Padding(
           padding: EdgeInsets.symmetric(horizontal: 20.0),
           child: Text(
-            "Recent Orders",
+            "Producto Reciente",
             style: TextStyle(
                 fontSize: 24, fontWeight: FontWeight.w600, letterSpacing: 1.2),
           ),
@@ -38,6 +38,7 @@ class RecentOrders extends StatelessWidget {
   Widget _buildRecentOrder(BuildContext context, Order order) {
     return Container(
       width: 320,
+      height: 200,
       margin: const EdgeInsets.all(10),
       decoration: BoxDecoration(
           color: Colors.white,
@@ -56,12 +57,13 @@ class RecentOrders extends StatelessWidget {
                     width: 100,
                     decoration: BoxDecoration(
                         image: DecorationImage(
-                            image: AssetImage(order.food.imageUrl),
+                            image: AssetImage(order.food.imagen),
                             fit: BoxFit.cover)),
                   ),
                 ),
                 Expanded(
                   child: Container(
+                    height: 200,
                     margin: const EdgeInsets.all(12),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -73,17 +75,14 @@ class RecentOrders extends StatelessWidget {
                               fontSize: 18, fontWeight: FontWeight.bold),
                           overflow: TextOverflow.ellipsis,
                         ),
-                        const SizedBox(
+                        /*const SizedBox(
                           height: 4,
-                        ),
+                        ),*/
                         Text(
-                          order.restaurant.name,
+                          order.restaurant.nombre,
                           style: const TextStyle(
                               fontSize: 16, fontWeight: FontWeight.w600),
                           overflow: TextOverflow.ellipsis,
-                        ),
-                        const SizedBox(
-                          height: 4,
                         ),
                         Text(order.date,
                             style: const TextStyle(
@@ -99,8 +98,7 @@ class RecentOrders extends StatelessWidget {
             margin: const EdgeInsets.only(right: 15),
             width: 48,
             decoration: BoxDecoration(
-                color: Colors.deepOrangeAccent,
-                borderRadius: BorderRadius.circular(30)),
+                color: Colors.purple, borderRadius: BorderRadius.circular(30)),
             child: IconButton(
                 onPressed: () {},
                 icon: const Icon(
